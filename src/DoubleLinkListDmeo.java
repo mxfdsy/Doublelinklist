@@ -7,7 +7,7 @@ public class DoubleLinkListDmeo extends  DoubleLinkList{
         List.addLast("A");
         List.addFirst("B");
         List.addFirst("B");
-        List.removeList("A");
+        List.search("A");
         System.out.println(List.size);
     }
 }

@@ -1,17 +1,23 @@
-import javax.xml.soap.Node;
-
 /**
  * 需求：编写一个双向链表
  * Created by 没想法的岁月 on 2018/3/27.
  */
 public class DoubleLinkList  {
     //链表集合的第一个节点
-    Node first;
+    private Node first;
     //最后一个节点
-    Node last;
+    private Node last;
     int size;
 
+    public boolean search(Object ele) {
+        if (size == 0) {
+           return false;
+        }
+        for (int i = 0; i <size ; i++) {
 
+        }
+        return false;
+    }
     class Node{
         Node pre;
         Node next;
@@ -23,13 +29,25 @@ public class DoubleLinkList  {
     }
     public void addLast(Object ele) {
         Node node = new Node(ele);
-        Node last = node;
+        if (size == 0) {
+            Node first = node;
+            Node last = node;
+        }else {
+            this.last.next =node;
+            node.pre = this.last;
+        }
         size++;
     }
 
     public void addFirst(Object ele) {
         Node node = new Node(ele);
-        Node first = node;
+        if (size == 0) {
+            Node first = node;
+            Node last = node;
+        }else{
+            node.next = this.first;
+            this.first.pre =node;
+        }
         size++;
     }
 }
