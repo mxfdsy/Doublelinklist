@@ -21,7 +21,7 @@ public class DoubleLinkListDmeo {
         //打印出当前节点的toString
         System.out.println(list);
         //删除带有这个元素的节点且返回这个值
-        System.out.println(list.remove("A"));
+        System.out.println(list.remove("C"));
         System.out.println(list);
     }
 }

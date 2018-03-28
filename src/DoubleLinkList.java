@@ -15,33 +15,34 @@ public class DoubleLinkList  {
 
     public Object  remove(Object ele) {
         // 先找到这个要被删除的节点
-        if (size == 0) {
-            return "当前的集合中没有任何的元素";
-        }else{
             Node current = this.first;
             for (int i = 0; i <size ; i++) {
                 if (!current.ele.equals(ele)) {
                     if (current.next == null){
                         return "集合中不存在含有此元素的节点";
                     }
+                    current = current.next;
                 }
-                current = current.next;
             }
             //删除的节点
             if (current == first){
+                first =current.next ;
                 current.next.prev =null;
-                current.next = first;
+                size--;
+                return "";
             }else if (current == last){
+                last =current.prev;
                 current.prev.next =null;
-                current.prev =last;
+                size--;
+                return "";
             }else{
-                current.prev =current.next.prev;
-                current.next= current.prev.next;
+                current.next.prev =current.prev;
+                current.prev.next = current.next;
+                size--;
+                return "";
             }
-            size--;
-            return "成功删除含有元素"+ current.ele + "的节点";
         }
-    }
+
 
     //使用类来描述 接点这类输入
     class Node{
